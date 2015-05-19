@@ -1,0 +1,44 @@
+---
+layout: default
+comments: true
+---
+<div class="post">
+    <div class="cover">
+        <img class="" src="{{ page.image }}" alt="bla">
+    </div>
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+    <div class="social">
+    	<p>Share this post:</p>
+    	<div>
+    		<a href="https://twitter.com/home?status={{ page.title }}%20on%20%23StarterPack:%20pro%20tips%20on%20getting%20started%20{{ site.url }}{{ page.url }}"><i class="fa fa-twitter-square fa-2x"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"><i class="fa fa-facebook-square fa-2x"></i></a>
+            <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"><i class="fa fa-google-plus-square fa-2x"></i></a>
+        </div>
+        <h3>Who's next?</h3>
+            <p>Sign up for your weekly dose of Starter Pack:
+        <script src="http://form.jotformeu.com/jsform/50963733816361" type="text/javascript"></script>
+</p>
+    </div>
+    {% if page.comments %}
+    	<div id="disqus_thread"></div>
+			<script type="text/javascript">
+			    /* * * CONFIGURATION VARIABLES * * */
+			    var disqus_shortname = 'starterpack';
+			    /* * * DON'T EDIT BELOW THIS LINE * * */
+			    (function() {
+			        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			    })();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    {% endif %}
+  </article>
+
+</div>

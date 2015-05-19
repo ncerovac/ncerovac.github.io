@@ -1,0 +1,244 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+$serif: 'Gentium Book Basic', serif;
+$sans-serif: 'Open Sans', sans-serif;
+
+body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.cover {
+    overflow: hidden;
+    //height: 350px;
+}
+
+.logo {
+  font-family: $sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  .brand {
+    color: #555;
+  }
+  img {
+    border-radius: 100px;
+    width: 25%;
+  }
+}
+#logo-mobile {
+  display: inline-block;
+  font-family: $sans-serif;
+  font-weight: 700;
+  color: #555;
+  img {
+    border-radius: 100px;
+    width: 10%;
+    display: inline-block;
+  }
+}
+
+.description {
+  font-family: $sans-serif;
+  font-weight: 400;
+  color: #555;
+  font-size: 80%;
+  margin-left: 20px;
+}
+
+.menu-nav {
+  position: relative;
+  ul {
+    margin-left: 20px;
+    list-style-type: none;
+  }
+}
+
+.post {
+  font-family: $serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+  color: #333;
+  line-height: 1.4;
+  .post-header {
+    margin-top: 42px;
+    margin-bottom: 42px;
+  }
+  .post-title {
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .post-meta {
+    font-family: $sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .intro {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 42px;
+    color: #666;
+  }
+  .question {
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 32px;
+  }
+  .answer {
+    margin-top: 0;
+    margin-bottom: 42px;
+    p {
+      margin-top: 0;
+      margin-bottom: 22px;
+    }
+  }
+}
+
+
+.home {
+  font-family: $serif;
+  .post-item {
+    margin-bottom: 40px;
+  }
+  .post-date {
+    color: #9E9E9E;
+    font-size: 85%;
+  }
+  .image { 
+     position: relative; 
+     width: 100%; /* for IE 6 */
+     margin-bottom: 10px;
+  }
+  .title {
+    font-family: $sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000;
+    margin-bottom: 5px;
+    text-decoration: underline;
+  }
+
+}
+
+
+// Extra small screen / phone
+//** Deprecated `@screen-xs` as of v3.0.1
+$screen-xs:                  480px;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px;
+$screen-sm-min:              $screen-sm;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px;
+$screen-md-min:              $screen-md;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px;
+$screen-lg-min:              $screen-lg;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+
+
+
+.container-flexi {
+  box-sizing: border-box;
+  padding-left: 2%;
+  padding-right: 2%;
+  @media (min-width: $screen-sm-min) {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  @media (min-width: $screen-md-min) {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  @media (min-width: $screen-lg-min) {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    800px;
+
+$on-palm:          600px;
+$on-laptop:        800px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
+
+body {
+  padding-top: 30px;
+  @media (max-width: $screen-md-min) {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  #logo-mobile {
+    padding-left: 20px;
+  }
+  
+}

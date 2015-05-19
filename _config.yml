@@ -1,0 +1,16 @@
+# Site settings
+title: StarterPack
+email: nemanja.cerovac@gmail.com
+description: > # When we learn from our role models, there's a lot we can't copy. 
+  What would they do if they were just starting out today, like us?
+  Starter Pack digs into their approaches, without their unfair advantages.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://starterpack.co" # the base hostname & protocol for your site
+twitter_username: ncerovac
+github_username:  ncerovac
+
+# Build settings
+markdown: kramdown
+
+permalink: /:title
+

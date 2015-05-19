@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="container-flexi">
+        <div class="row-fluid">
+            <div class="col-md-8">
+            {{ content }}
+            </div>
+            <div class="col-md-4">
+              <div class="affix pull-rigth">
+                <div class="logo">
+                  <a href="{{site.url}}"><img src="/images/backpack-icon.jpg" ></a>
+                  <a class="brand" href="{{site.url}}">StarterPack</a>
+                </div>
+                <div class="description">
+                  <p>What would they do if they were just starting out today?</p>
+                </div>
+                <div class="menu-nav">
+                  <ul>
+                    <li>
+                      <a href="{{site.url}}">INTERVIEWS</a>
+                    </li>
+                    <li>
+                      <a href="/about">ABOUT</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
